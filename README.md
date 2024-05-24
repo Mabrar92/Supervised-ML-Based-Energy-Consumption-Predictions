@@ -1,4 +1,4 @@
-# Supervised Machine Learning Based Prediction of Energy Consumption
+# Supervised Machine Learning for Predicting Sustainable Energy Needs
 
 In this project, I developed machine learning models to predict future energy consumption for 176 countries using the Global Data on Sustainable Energy. The dataset spans from 2000 to 2020 and includes 21 measures such as population count, access to clean fuels, and electricity generation sources. I applied data pre-processing, model selection, training, and evaluation techniques, and visualized energy consumption and carbon emission trends for the next five years for three selected countries. This work aims to support the United Nations' Sustainable Development Goal 7 by providing insights into global energy needs and environmental impact.
 
