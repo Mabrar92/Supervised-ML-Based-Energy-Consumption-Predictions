@@ -1,6 +1,6 @@
-# Supervised Machine Learning Based Prediction of Energy Consumption and Carbon Forecasting
+# Supervised Machine Learning Based Prediction of Energy Consumption
 
-In this project, I developed machine learning models to predict future energy consumption and forecast carbon emission levels for 176 countries using the Global Data on Sustainable Energy. The dataset spans from 2000 to 2020 and includes 21 measures such as population count, access to clean fuels, and electricity generation sources. I applied data pre-processing, model selection, training, and evaluation techniques, and visualized energy consumption and carbon emission trends for the next five years for three selected countries. This work aims to support the United Nations' Sustainable Development Goal 7 by providing insights into global energy needs and environmental impact.
+In this project, I developed machine learning models to predict future energy consumption for 176 countries using the Global Data on Sustainable Energy. The dataset spans from 2000 to 2020 and includes 21 measures such as population count, access to clean fuels, and electricity generation sources. I applied data pre-processing, model selection, training, and evaluation techniques, and visualized energy consumption and carbon emission trends for the next five years for three selected countries. This work aims to support the United Nations' Sustainable Development Goal 7 by providing insights into global energy needs and environmental impact.
 
 # The Dataset
 The dataset contains key metrics for 176 countries where each country has 21 records spanning the years 2000 – 2020. There are 21 variables in total including Energy Consumption per capita, Renewable electricity generation, Carbon (CO2 Emissions), Access to clean cooking fuels and financial flows to developing countries (from developed countries). Table 1 summarizes all variables along with the descriptions
@@ -82,17 +82,6 @@ Figure Mean Test Accuracy for Energy Consumption Prediction Model
  Thus, the final features for energy consumption prediction model are shown below.
 ![image](https://github.com/Mabrar92/Supervised-ML-Based-Energy-Consumption-Predictions/assets/18236632/241b2d5a-c2c8-4f0c-aef7-67053feb2a1a)
 
-
-**Carbon Emission Prediction Model Features**
-
-Similar settings are used to obtain the most optimal features using the Recursive Feature Elimination Method using cross-validation (RFECV).
-
-![image](https://github.com/Mabrar92/Supervised-ML-Based-Energy-Consumption-Predictions/assets/18236632/ef844a39-237f-4b95-980a-8e4e99f554c5)
-
-The RFE mean test accuracy shows the most optimal number of features to be 7. As we increase the number of features beyond 7, the accuracy reduces showing the adverse effect of overfitting or introduction of correlated features. This graph also highlights the significance of balancing the number of features to avoid underfitting or overfitting.
-
-![image](https://github.com/Mabrar92/Supervised-ML-Based-Energy-Consumption-Predictions/assets/18236632/8e41194f-6d6e-482c-910b-648804a96931)
-
 Now we have our final features and pre-processed data ready to be fed into machine-learning models for prediction.
 
 
@@ -100,7 +89,6 @@ Now we have our final features and pre-processed data ready to be fed into machi
 
 The model selection and training phase involves selecting a range of machine learning algorithms to train on the preprocessed dataset and based on the prediction results, the best-performing model is chosen. The selected prediction algorithms depend on the type of input features and output label. If the feature to be predicted is numerical in nature, the regression algorithm is utilized, on other hand, if the feature to be predicted is categorical, classification algorithm would be the appropriate model. Since the underlying dataset has numerical input features and output label, we choose Regression Algorithms for our analysis. To train our model, a Cross Validation technique is employed, so that our model is evaluated on different subsets of data thus avoiding underfitting or overfitting problems.
 
-  # Energy consumption Prediction model
   
 **Model Training with cross-validation:**
 
@@ -113,8 +101,25 @@ The cross-validation object accepts multiple parameters to refine the process, i
 
 # Model Selection on Test Data
 
-The output of the above code reveals that Random Forest Regressor has the highest r2 score of 0.989 and an adjusted r2 score of 0.986. The second high-performing model is Gradient boosting with a 0.972 r2 score. While SVM was the worst-performing model with an R2 score less than zero.  Thus, the chosen model for the Prediction of Energy Consumption data would be a **Random Forest Regressor**.
+The output of the above code reveals that the Random Forest Regressor has the highest r2 score of 0.989 and an adjusted r2 score of 0.986. The second high-performing model is Gradient boosting with a 0.972 r2 score. While SVM was the worst-performing model with an R2 score less than zero.  Thus, the chosen model for the Prediction of Energy Consumption data would be a **Random Forest Regressor**.
 
 ![image](https://github.com/Mabrar92/Supervised-ML-Based-Energy-Consumption-Predictions/assets/18236632/f674888d-25ef-4d5d-837d-64fcee2a12fd)
+
+The prediction error of the Random Forest Regressor model is shown in the plot.  The plot presents the accuracy of the predictions and explains how well the predicted values from the model align with the actual values from the dataset, where blue points represent the actual (y) vs predicted (y’) value distribution. The visualization shows that the points are closely aligned to the ideal fit thus suggesting high accuracy.
+
+![image](https://github.com/Mabrar92/Supervised-ML-Based-Energy-Consumption-Predictions/assets/18236632/37100964-d03c-4233-9307-7d74b2a360de)
+
+The residual plot along with the distribution of residuals for the Random Forest Regressor model is shown in the figure below. The residual plot is an effective visualization that shows the difference between the predicted value and the actual value against the predicted value.  The closer a data point is to the horizontal line the lesser the error and thus the more accurate the model is. The plot shows that random forest regressors have a normal distribution of residuals along the origin, which is zero, indicating unbiased predictions.
+
+![image](https://github.com/Mabrar92/Supervised-ML-Based-Energy-Consumption-Predictions/assets/18236632/fe867e4f-fa74-4f87-ac67-18945c43d0e2)
+
+
+# Forecasting
+The BRICS nations are key players in the global energy dynamics because of their large population and economic growth. Thus, predicting future energy for the next 5 years of some of these countries would prove to understand their influence on the global stage and in shaping the global strategies of energy. For this purpose, ARIMA (Autoregressive Integrated Moving Average) was employed.
+
+The countries chosen for energy consumption forecasting are India, China, and Turkey. Using ARIMA model, the energy consumption for the years 2021 to 2025 is forecasted. The results of the forecast are visualized with historical data, to better understand the context. The Figure 4 forecast suggests a moderate decrease in energy consumption per capita which aligns perfectly with the shift to more energy-efficient practices of the country but could also suggest less accessibility of the energy in the rural areas. For China and Turkey, a profound growth in energy consumption per capita is predicted which is indicative of continued industrial growth and urbanization in both countries. 
+
+
+![image](https://github.com/Mabrar92/Supervised-ML-Based-Energy-Consumption-Predictions/assets/18236632/eeb1c2a9-f8a7-4295-94da-60c9686340d3)
 
 
