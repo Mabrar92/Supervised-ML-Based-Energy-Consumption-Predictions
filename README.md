@@ -11,7 +11,7 @@ The dataset contains key metrics for 176 countries where each country has 21 rec
 Table 1 Names and description of all features from the Global Data on Sustainable Energy
 
 #  Data Preprocessing
-Data preprocessing is an important step in the machine learning pipeline that involves cleaning, organizing, transforming, and optimizing raw data that can be utilized by machine learning models to produce optimized outputs. The tasks involved include handling missing values through imputation algorithms, scaling features through standardization or normalization and converting categorical features to numerical data through encoding.
+Data preprocessing is an important step in the machine learning pipeline that involves cleaning, organizing, transforming, and optimizing raw data that can be utilized by machine learning models to produce optimized outputs. The tasks involved include handling missing values through imputation algorithms, scaling features through standardization or normalization and converting categorical features to numerical data through encoding. For complete code of this project, please visit [kaggle notebook](https://www.kaggle.com/code/mabrar92/energy-consumption-prediction-using-ml)
 
 The columns such as Year, Density and Land Area have incorrect data types. Moreover, the name of Density has irregular characters in it, so we rename it.
 
